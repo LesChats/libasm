@@ -7,7 +7,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # There is NO WARRANTY, to the extent permitted by law.
  
 
-# Make data base, printed on Tue Aug  2 18:10:03 2022
+# Make data base, printed on Wed Aug  3 13:15:57 2022
 
 # Variables
 
@@ -46,9 +46,9 @@ VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupp
 # environment
 _ = /usr/bin/code
 # environment
-_P9K_TTY = /dev/pts/0
+_P9K_TTY = /dev/pts/1
 # environment
-JOURNAL_STREAM = 9:460186
+JOURNAL_STREAM = 9:361247
 # environment
 XDG_CONFIG_DIRS = /etc/xdg/xdg-ubuntu:/etc/xdg
 # makefile (from 'Makefile', line 1)
@@ -70,17 +70,17 @@ VSCODE_VERBOSE_LOGGING = true
 # makefile (from 'Makefile', line 9)
 OBJS = $(ASM_SRC:.s=.o)
 # environment
-MANAGERPID = 63725
+MANAGERPID = 50381
 # environment
 P9K_SSH = 0
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/38806/vscode-ipc-0107be69-3b30-4e7e-b38b-5adca0c5bdc3.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/38806/vscode-ipc-7af95610-97b2-4224-982d-894db0c02673.sock
 # environment
 VSCODE_CWD = /mnt/nfs/homes/abaudot/work/asm
 # environment
 XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session0
 # environment
-KRB5CCNAME = FILE:/tmp/krb5cc_38806_YQEWpM
+KRB5CCNAME = FILE:/tmp/krb5cc_38806_Rhhqub
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
 # environment
@@ -90,9 +90,9 @@ GPG_AGENT_INFO = /run/user/38806/gnupg/S.gpg-agent:0:1
 # environment
 LSCOLORS = Gxfxcxdxbxegedabagacad
 # environment
-SESSION_MANAGER = local/e3r11p13.clusters.42paris.fr:@/tmp/.ICE-unix/64248,unix/e3r11p13.clusters.42paris.fr:/tmp/.ICE-unix/64248
+SESSION_MANAGER = local/e2r6p20.clusters.42paris.fr:@/tmp/.ICE-unix/50900,unix/e2r6p20.clusters.42paris.fr:/tmp/.ICE-unix/50900
 # makefile (from 'Makefile', line 7)
-ASM_SRC = ft_strlen.s ft_strcmp.s
+ASM_SRC = ft_strlen.s ft_strcmp.s ft_strcpy.s
 # environment
 XDG_RUNTIME_DIR = /run/user/38806
 # environment
@@ -102,7 +102,7 @@ VSCODE_LOG_STACK = false
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-INVOCATION_ID = 96caa96f431047c2bf6c9e13bd162f75
+INVOCATION_ID = f4fa6469816b4311bcfcd50b7222119a
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # environment
@@ -116,7 +116,7 @@ XDG_SESSION_DESKTOP = ubuntu
 # environment
 SSH_AUTH_SOCK = /run/user/38806/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 65625
+GIO_LAUNCHED_DESKTOP_FILE_PID = 51313
 # automatic
 %F = $(notdir $%)
 # environment
@@ -130,7 +130,7 @@ PWD = /mnt/nfs/homes/abaudot/work/asm
 # default
 .LOADED := 
 # environment
-SSH_AGENT_PID = 64211
+SSH_AGENT_PID = 50864
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
 # environment
@@ -188,7 +188,7 @@ LESS = -R
 # default
 MAKE_COMMAND := make
 # environment
-OLDPWD = /mnt/nfs/homes/abaudot/work
+OLDPWD = /mnt/nfs/homes/abaudot
 # environment
 TERMINATOR_DBUS_PATH = /net/tenshu/Terminator2
 # default
@@ -252,11 +252,11 @@ TERMINATOR_DBUS_NAME = net.tenshu.Terminator21a9d5db22c73a993ff0b42f64b396873
 # environment
 DOCKER_HOST = unix:///run/user/38806/docker.sock
 # environment
-VSCODE_PID = 66198
+VSCODE_PID = 54976
 # environment
-TERMINATOR_UUID = urn:uuid:dc76c1ea-c0c6-44ab-b491-2aa232877569
+TERMINATOR_UUID = urn:uuid:3cfd1030-6635-46ef-9b01-c33d4b573e8e
 # variable set hash-table stats:
-# Load=122/1024=12%, Rehash=0, Collisions=24/152=16%
+# Load=122/1024=12%, Rehash=0, Collisions=24/156=15%
 
 # Pattern-specific Variable Values
 
@@ -264,9 +264,9 @@ TERMINATOR_UUID = urn:uuid:dc76c1ea-c0c6-44ab-b491-2aa232877569
 
 # Directories
 
-# . (device 55, inode 323193317): 12 files, no impossibilities.
+# . (device 59, inode 323193317): 14 files, no impossibilities.
 
-# 12 files, no impossibilities in 1 directories.
+# 14 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -279,17 +279,24 @@ TERMINATOR_UUID = urn:uuid:dc76c1ea-c0c6-44ab-b491-2aa232877569
 # Files
 
 # Not a target:
+ft_strcpy.s:
+#  Implicit rule search has been done.
+#  Last modified 2022-08-03 13:05:51.621654993
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
 ft_strcmp.s:
 #  Implicit rule search has been done.
-#  Last modified 2022-08-02 18:07:57.935025804
+ 
+#  Last modified 2022-08-02 18:18:28.493216024
 #  File has been updated.
 #  Successfully updated.
 
 ft_strlen.o: ft_strlen.s
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'ft_strlen'
- 
-#  Last modified 2022-08-02 18:09:41.633728175
+#  Last modified 2022-08-02 18:18:49.385156062
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 17):
@@ -300,12 +307,14 @@ all: libasm.a
 #  Implicit rule search has been done.
 #  File does not exist.
 #  File has been updated.
-#  Successfully updated.
+#  Needs to be updated (-q is set).
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/4=0%
 
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-08-02 18:09:38.900736019
+#  Last modified 2022-08-03 13:15:56.479444635
 #  File has been updated.
 #  Successfully updated.
 
@@ -331,11 +340,13 @@ fclean:
 	rm -rf $(OBJS)
 	rm -rf $(NAME)
 
-libasm.a: ft_strlen.o ft_strcmp.o
+libasm.a: ft_strlen.o ft_strcmp.o ft_strcpy.o
 #  Implicit rule search has not been done.
-#  Last modified 2022-08-02 18:09:41.650728126
+#  Last modified 2022-08-02 18:18:49.41015599
 #  File has been updated.
-#  Successfully updated.
+#  Needs to be updated (-q is set).
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/4=0%
 #  recipe to execute (from 'Makefile', line 22):
 	ar rc $(NAME) $(OBJS)
 
@@ -350,29 +361,56 @@ re: fclean all
 #  Modification time never checked.
 #  File has not been updated.
 
+ft_strcpy.o: ft_strcpy.s
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'ft_strcpy'
+#  File does not exist.
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# automatic
+# @ := ft_strcpy.o
+# automatic
+# % := 
+# automatic
+# * := ft_strcpy
+# automatic
+# + := ft_strcpy.s
+# automatic
+# | := 
+# automatic
+# < := ft_strcpy.s
+# automatic
+# ^ := ft_strcpy.s
+# automatic
+# ? := ft_strcpy.s
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=1/13=8%
+#  recipe to execute (from 'Makefile', line 17):
+	$(ASM_COMP) $<
+
 ft_strcmp.o: ft_strcmp.s
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'ft_strcmp'
-#  Last modified 2022-08-02 18:09:41.643728146
+#  Last modified 2022-08-02 18:18:49.39615603
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 17):
 	$(ASM_COMP) $<
 
 # files hash-table stats:
-# Load=12/1024=1%, Rehash=0, Collisions=0/36=0%
+# Load=14/1024=1%, Rehash=0, Collisions=0/42=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 23 / storage = 188 B / avg = 8 B
-# current buf: size = 8162 B / used = 188 B / count = 23 / avg = 8 B
+# strcache buffers: 1 (0) / strings = 27 / storage = 227 B / avg = 8 B
+# current buf: size = 8162 B / used = 227 B / count = 27 / avg = 8 B
 
-# strcache performance: lookups = 45 / hit rate = 48%
+# strcache performance: lookups = 51 / hit rate = 47%
 # hash-table stats:
-# Load=23/8192=0%, Rehash=0, Collisions=1/45=2%
-# Finished Make data base on Tue Aug  2 18:10:03 2022
+# Load=27/8192=0%, Rehash=0, Collisions=2/51=4%
+# Finished Make data base on Wed Aug  3 13:15:57 2022
 
  

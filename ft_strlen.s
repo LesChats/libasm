@@ -5,9 +5,9 @@ section .text
 global ft_strlen
 
 ft_strlen:
-    xor     rax, rax              ; rax = 0
-    lea     rcx, [rax - 1]        ; rcx = -1
-    repne   scasb                 ; rcx = -len - 2
-    not     rcx                   ; rcx = len + 1
-    lea     rax, [rcx - 1]        ; rax = len
-    ret
+            xor     rax, rax              ; rax = 0
+            lea     rcx, [rax - 1]        ; rcx = -1
+            repne   scasb                 ; rcx = -len - 2
+            not     rcx                   ; rcx = len + 1
+            lea     rax, [rcx - 1]        ; rax = len
+            ret

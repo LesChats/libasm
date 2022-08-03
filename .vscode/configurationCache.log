@@ -1,1 +1,1 @@
-{"buildTargets":["all","fclean","ft_strcmp.o","ft_strlen.o","libasm.a","re","test"],"launchTargets":["/mnt/nfs/homes/abaudot/work/asm>ft_strcmp()"],"customConfigurationProvider":{"workspaceBrowse":{"browsePath":[],"compilerArgs":[]},"fileIndex":[]}}
+{"buildTargets":["all","fclean","ft_strcmp.o","ft_strcpy.o","ft_strlen.o","libasm.a","re","test"],"launchTargets":[],"customConfigurationProvider":{"workspaceBrowse":{"browsePath":[],"compilerArgs":[]},"fileIndex":[]}}

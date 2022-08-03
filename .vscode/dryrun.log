@@ -1,5 +1,6 @@
 make --dry-run --keep-going --print-directory
 make: Entering directory '/mnt/nfs/homes/abaudot/work/asm'
-make: Nothing to be done for 'all'.
+nasm -f elf64 ft_strcpy.s
+ar rc libasm.a ft_strlen.o ft_strcmp.o ft_strcpy.o
 make: Leaving directory '/mnt/nfs/homes/abaudot/work/asm'
  

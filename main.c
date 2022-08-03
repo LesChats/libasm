@@ -12,6 +12,8 @@ size_t	ft_strlen(const char *s);
 #endif
 int		ft_strcmp(const char *s1, const char *s2);
 
+int	ft_strcpy(char *buff, const char* srC);
+
 int main(int ac, char **av)
 {
 	int a, b;
@@ -33,8 +35,17 @@ int main(int ac, char **av)
 		a = ft_strcmp(av[1], av[2]);
 		b = strcmp(av[1], av[2]);
 	}
-
 	printf("ft_cmp = %d vs cmp = %d\n", a, b);
+
+	char buff[1000] = {0};
+	if (ac == 1) {
+		ft_strcpy(buff, "super copy");
+
+	} else {
+		a = ft_strcpy(buff, av[1]);
+
+	}
+		printf("%d: copy result: '%s'\n", a, buff);
     return 0;
 }
 

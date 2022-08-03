@@ -4,7 +4,7 @@
 # @created     : Tuesday Aug 02, 2022 13:54:21 CEST
 ######################################################################
 
-ASM_SRC = ft_strlen.s ft_strcmp.s
+ASM_SRC = ft_strlen.s ft_strcmp.s ft_strcpy.s
 
 OBJS = $(ASM_SRC:.s=.o)
 
