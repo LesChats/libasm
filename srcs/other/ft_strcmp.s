@@ -1,5 +1,6 @@
 section .text
 global ft_strcmp
+
 ft_strcmp:  
 loop:   lodsb
         test    al, al

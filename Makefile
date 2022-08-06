@@ -1,31 +1,69 @@
 ######################################################################
 # @author      : abaudot (aimebaudot@gmail.com)
 # @file        : Makefile
-# @created     : Tuesday Aug 02, 2022 13:54:21 CEST
+# @created     : jeudi août 04, 2022 10:22:57 CEST
 ######################################################################
 
-ASM_SRC = ft_strlen.s ft_strcmp.s ft_strcpy.s
+CC=gcc
+ASM=nasm -f elf64
+CFLAGS=-Wall -Werror -Wextra
 
-OBJS = $(ASM_SRC:.s=.o)
+ODIR=objs
+SDIR=srcs
+NAME=libasm.a
+TDIR=test_files
+TEST=test
+TEST_BONUS=test_bonus
 
-ASM_COMP = nasm -f elf64
-FLAGS = -Wall -Werror -Wextra
-NAME = libasm.a
-TEST = test
+SRC=srcs/ft_strlen.s\
+	srcs/ft_strcpy.s\
+	srcs/ft_strcmp.s\
+	srcs/ft_write.s\
+	srcs/ft_read.s\
+	srcs/ft_strdup.s
 
-%.o: %.s
-	$(ASM_COMP) $<
+BONUS=srcs/ft_list_size_bonus.s\
+	  srcs/ft_list_push_front_bonus.s\
+	  srcs/ft_list_remove_if_bonus.s\
+	  srcs/ft_list_sort_bonus.s\
+	  srcs/ft_atoi_base_bonus.s
+
+OBJ=$(patsubst $(SDIR)/%.s,$(ODIR)/%.o,$(SRC))
+BOBJS=$(OBJ)
+BOBJS += $(patsubst $(SDIR)/%.s,$(ODIR)/%.o,$(BONUS))
+
+$(ODIR)/%.o: $(SDIR)/%.s
+	$(ASM) $< -o $@
 
 all: $(NAME)
 
-$(NAME): $(OBJS)
-	ar rc $(NAME) $(OBJS)
+bonus: make_bonus
 
-test: $(NAME)
-	gcc -o $(TEST) main.c -L. -lasm
+$(NAME): $(OBJ)
+	@echo "Building library: libasm.a"
+	ar rcs $(NAME) $(OBJ)
+	ranlib $(NAME)
 
-fclean:
-	rm -rf $(OBJS)
-	rm -rf $(NAME)
+make_bonus: $(BOBJS)
+	ar rcs $(NAME) $(BOBJS)
+	ranlib $(NAME)
+
+
+$(TEST): $(NAME)
+	@echo "Building test file for libasm"
+	gcc -o $(TEST) $(TDIR)/main.c -L. -lasm -no-pie
+
+$(TEST_BONUS): make_bonus
+	gcc -o $(TEST_BONUS) $(TDIR)/main_bonus.c -L. -lasm -no-pie
+
+.PHONY: clean fclean re all
+
+clean:
+	rm -f $(ODIR)/*.o
+
+fclean: clean
+	rm -f $(TEST)
+	rm -f $(TEST_BONUS)
+	rm -f $(NAME)
 
 re: fclean all

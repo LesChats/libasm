@@ -1,6 +1,9 @@
+; ----------------------------------------------------------
 ; Determine the lenght of Nul-Terminated c-string
 ; Input: rdi = adress of the beginning of the string buffer
 ; Output: rax = lenght of the string.
+; ----------------------------------------------------------
+
 section .text
 global ft_strlen
 
