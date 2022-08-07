@@ -23,6 +23,7 @@ size_t	ft_list_size ( t_list const  *alst );
 void	ft_list_remove_if( t_list **alst, void* data,
 			int (*cmp)(), void (*free_fct)(void*) );
 void	ft_list_sort (t_list **alst, int (*cmp)() );
+
 extern int	ft_atoi_base(char *str, char*base);
 
 ////////////////////////////////////////////////////////////
@@ -68,7 +69,6 @@ void	list_remove_if(t_list **begin_list, void *data_ref,
 		}
 	}
 }
-
 static void	ft_swap_list(t_list **prevnext, t_list *last)
 {
 	t_list	*swap;
@@ -125,13 +125,12 @@ static void	print_list(t_list const *alst, size_t(*f)(t_list const *)) {
 }
 
 
-void v_f(void *v) { (void)v; return; }
+void v_f(void *v) { char*i =(char*)v; (void)i;  return; }
 
 int main(int ac, char **av) {
 
-	/*
 	char *zero = "zero";
-	char *data[10] = {"one", "two", "tree", "four", "five", "six", "seven", "eight", "night", "ten"};
+	char data[][10] = {"one", "two", "tree", "four", "five", "six", "seven", "eight", "night", "ten"};
 
 	t_list *ft = malloc(16); ft->data = zero; ft->next = 0;
 	t_list *list = malloc(16); list->data = zero; list->next = 0;
@@ -163,6 +162,9 @@ int main(int ac, char **av) {
 	print_list(ft, ft_list_size);
 	printf("printing c version\n");
 	print_list(list, &list_size);
+	printf("printing asm version\n");
+	print_list(ft, &ft_list_size);
+
 
 	printf("\n*** REMOVING SOME NODES ***\n");
 	ft_list_remove_if(&ft, "night", &strcmp, &v_f);
@@ -183,16 +185,18 @@ int main(int ac, char **av) {
 
 	printf("\n*** SORTING LIST ***\n");
 	
+	list_sort(&list, &strcmp);
+	printf("printing c version\n");
+	print_list(list, &list_size);
+
 	ft_list_sort(&ft, &strcmp);
 	printf("printing asm version\n");
 	print_list(ft, &ft_list_size);
 
-	list_sort(&list, &strcmp);
-	printf("printing c version\n");
-	print_list(list, &list_size);
-*/
 	if (ac == 3)
 		printf("res = %d\n", ft_atoi_base(av[1], av[2]));
-
+	printf("res = %d\n", ft_atoi_base("1\xaf", "01"));
+	printf("res = %d\n", ft_atoi_base("-++\xa0", "01"));
+	printf("res = %d\n", ft_atoi_base(" \t\n\r-++++++-+--ff\xff", "0123456789abcdef"));
 	return 0;
 }

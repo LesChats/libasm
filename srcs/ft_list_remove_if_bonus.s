@@ -3,14 +3,17 @@ section .text
 	extern free
 
 %define LIST r15
-%define DATA r12
+%define FREE rbp
 %define CMPF r13
-%define FREE r14
+%define DATA r14
 %define PREV rbx
+%define BEGIN rsp+8
 
 ft_list_remove_if:
+					push 	rbp
+					push	rbx
 					sub		rsp, 16			; setting somme space on stack
-					mov		[rsp+8], rdi	; saving list_begin
+					mov		[BEGIN], rdi	; saving list_begin
 					mov		LIST, [rdi]		; list = *list_begin
 					test	LIST, LIST		; if not list
 					je		.end			; return
@@ -34,19 +37,22 @@ ft_list_remove_if:
 					test	LIST, LIST
 					je		.end
 .loop:
+;					xor		rax, rax
 					mov		rdi, [LIST]
 					mov		rsi, DATA
 					call	CMPF
-					test	rax, rax
+					test	eax, eax
 					je		.match
 					mov		PREV, LIST		; prev = l
 					mov		LIST, [LIST+8]	; l = l->next
 					test	LIST, LIST
 					jne		.loop
 .end:
-					add rsp, 16				; reset stack
+					add		rsp, 16				; reset stack
+					pop		rbx
+					pop		rbp
 					ret
 .list_begin	:		
 					mov		rax, [rsp+8]	; get list_begin from stack
-					mov		[rax], r9	; *list_begin = l->next 
+					mov		[rax], r9		; *list_begin = l->next 
 					jmp		.next
