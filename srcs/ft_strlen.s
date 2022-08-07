@@ -1,3 +1,6 @@
+; strlen(char const *str)
+; return len of str
+; use sse2
 section	.text align=16
 	global	ft_strlen
 

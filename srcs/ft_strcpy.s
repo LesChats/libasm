@@ -1,7 +1,17 @@
 
-section .text
-global ft_strcpy
+;**************************** strcpy ************************
+; Author: abaudot
+; Date create: 2022
 
+; Description:
+; strcy(char *dst, char const *src);
+;
+;************************************************************
+section .text
+    global ft_strcpy
+
+ft_strcpy:
+            mov rbx, rdi    ; save 
 len:
 
             mov     rdi, rsi
@@ -9,11 +19,7 @@ len:
             lea     rcx, [rax - 1]        ; rcx = -1
             repne   scasb                 ; rcx = -len - 2
             not     rcx                   ; rcx = len + 1
-            dec     rcx                   ; rcx = len
-            ret
-ft_strcpy:
-            mov rbx, rdi    ; save 
-            call len        ; get len rsi into rcx
+copy:
             mov rdi, rbx    ; get value back
             rep movsb       ; n copy
             ret
