@@ -32,4 +32,4 @@ void	ft_list_sort(t_list **begin_list,int (*cmp)());
 The second parameter is a string with the actual characters of the base.
 
 ### Optimization:
-strlen and strcpy with SSE instructions
+**strlen** and **strcmp** with *SSE* instructions
